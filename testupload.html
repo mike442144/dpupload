@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src='jquery.js'></script>
+    <script type='text/javascript' src='swfupload.js'></script>
+    <script type='text/javascript' src='swfupload.speed.js'></script>
+    <script type="text/javascript" src='dpupload.js'></script>
+    <link rel="stylesheet" href="dpupload.css">
+    <script type="text/javascript" src="progressbar.js"></script>
+    <script>
+      
+      $(document).ready(function () {
+      var upload_url = "http://localhost:1337/";//必填项
+      var flash_url = "swfupload.swf";//必填项
+      var post_params = {
+      "post_param_name_1" : "post_param_value_1",
+      "post_param_name_2" : "post_param_value_2",
+      "post_param_name_n" : "post_param_value_n"
+      };
+      var fn = function(fileName,idx){
+      console.log("%s,%s",fileName,idx);
+      }
+      
+      new dpUploader(upload_url,flash_url,fn,post_params).create();
+      }
+      );
+
+
+    </script>
+  </head>
+  <body>
+    <div class='dpuploader-container'></div>
+    <div class='dpuploader-container'></div>
+    <div class='dpuploader-container'></div>
+    <div class='dpuploader-container'></div>
+    <div class='dpuploader-container'></div>
+  </body>
+</html>
